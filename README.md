@@ -10,7 +10,6 @@ Price range filter (min-max pricing)
 Stock availability filter
 Sorting (Price: Low to High, High to Low)
 🎨 Responsive UI with an elegant design.
-ity.
 🏗️ Technologies Used
 HTML (Structure)
 CSS (Styling & Layout)
@@ -24,5 +23,5 @@ Edit
 │-- styles1.css       # CSS file for styling
 │-- script1.js        # JavaScript file for product filtering & search
 │-- images/           # Folder containing product images
-🚀 Optimized for performance and usabil![f2](https://github.com/user-attachments/assets/9d800ca8-0238-441e-a95e-157e605f444d)
-![f1](https://github.com/user-attachments/assets/20339e7c-5376-4bd2-8a7b-68c9c2ee5d97)
+🚀 Optimized for performance and usability.![f1](https://github.com/user-attachments/assets/20339e7c-5376-4bd2-8a7b-68c9c2ee5d97 )
+![f2](https://github.com/user-attachments/assets/9d800ca8-0238-441e-a95e-157e605f444d)
