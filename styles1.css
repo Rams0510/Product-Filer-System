@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+    background: #f4f4f4;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5),rgba(0,0,0,0.9)),url('images/bg.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.h{
+    border: solid 1px #333;
+    padding: 10px;
+    color: black;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+.h3{
+    border: solid 1px #333;
+    padding: 10px;
+    background: #333;
+    color: white;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+.container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.filters {
+    width: 250px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    flex-grow: 1;
+}
+
+.product {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: white;
+    transition: transform 0.3s;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.price {
+    font-weight: bold;
+    color: #27ae60;
+}
+
+button {
+    padding: 8px 12px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    background: #007BFF;
+    color: white;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+input, select {
+    width: 90%;
+    padding: 5px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.product img {
+    width: 150px;  /* Set a fixed width */
+    height: 150px; /* Set a fixed height */
+    object-fit: cover; /* Ensures images fit while maintaining aspect ratio */
+    border-radius: 8px; /* Optional: Rounded corners for a modern look */
+}
+/* 🔹 NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #333;
+    color: white;
+    padding: 10px 20px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* 🔹 SEARCH BAR */
+#searchBar {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    width: 300px;
+}

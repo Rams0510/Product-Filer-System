@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Filter System</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">ShopEasy</div>
+        <input type="text" id="searchBar" placeholder="🔍|Search for products... " onkeyup="searchProducts()">
+    </nav>
+
+    <h2>Product Filter System</h2>
+    <div class="container">
+        <div class="filters">
+            <h3 class="h3">Filters</h3>
+            <div class="h">
+            <h4>Category</h4>
+            <label><input type="checkbox" class="category" value="Electronics"> Electronics</label><br>
+            <label><input type="checkbox" class="category" value="Clothing"> Clothing</label><br>
+            <label><input type="checkbox" class="category" value="Furniture"> Furniture</label><br>
+        </div>
+        <div class="h">
+            <h4>Price Range</h4>
+            <input type="number" id="minPrice" placeholder="Min Price">
+            <input type="number" id="maxPrice" placeholder="Max Price">
+        </div>
+        <div class="h">
+            <h4>Availability</h4>
+            <label><input type="checkbox" id="inStockOnly">Stock Available</label><br>
+
+            <button onclick="applyFilters()">Apply Filters</button>
+            <button onclick="clearFilters()">Clear Filters</button>
+            <h4>Sort By</h4>
+            <select id="sortOption" onchange="applyFilters()">
+                <option value="default">Default</option>
+                <option value="lowToHigh">Price: Low to High</option>
+                <option value="highToLow">Price: High to Low</option>
+            </select>
+        </div>
+        </div>
+
+        <!-- Product List -->
+        <div class="products" id="productList"></div>
+    </div>
+
+    <script src="script1.js"></script>
+</body>
+</html>
