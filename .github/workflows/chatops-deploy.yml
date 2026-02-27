@@ -1,0 +1,34 @@
+name: ChatOps Deployment
+
+on:
+  repository_dispatch:
+    types: [chatops-deploy]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Show Deployment Info
+        run: |
+          echo "Deploying to ${{ github.event.client_payload.environment }}"
+          echo "Deployment ID: ${{ github.event.client_payload.deployment_id }}"
+          echo "Deploy successful!"
+
+      - name: Notify Backend - SUCCESS
+        if: success()
+        run: |
+          curl -X POST /webhook/github \
+            -H "Content-Type: application/json" \
+            -H "X-Webhook-Secret: 5f445dc2ee225ffa4d26a971fdaa916123584fc770211af9306074331921e2a8" \
+            -d "{\"deployment_id\": \"${{ github.event.client_payload.deployment_id }}\", \"status\": \"SUCCESS\", \"environment\": \"${{ github.event.client_payload.environment }}\", \"run_url\": \"https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}\"}"
+
+      - name: Notify Backend - FAILED
+        if: failure()
+        run: |
+          curl -X POST /webhook/github \
+            -H "Content-Type: application/json" \
+            -H "X-Webhook-Secret: 5f445dc2ee225ffa4d26a971fdaa916123584fc770211af9306074331921e2a8" \
+            -d "{\"deployment_id\": \"${{ github.event.client_payload.deployment_id }}\", \"status\": \"FAILED\", \"environment\": \"${{ github.event.client_payload.environment }}\", \"run_url\": \"https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}\"}"
